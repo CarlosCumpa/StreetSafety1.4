@@ -5,58 +5,47 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { UsuariosComponent } from './page/usuarios/usuarios.component';
-import { UsuariosListarComponent } from './page/usuarios/usuarios-listar/usuarios-listar.component';
-import { MatTableModule } from '@angular/material/table';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatNativeDateModule } from '@angular/material/core';
-import { FormsModule } from '@angular/forms'
-import{MatInputModule} from '@angular/material/input'
-import{MatSelectModule} from '@angular/material/select'
-import{MatDatepickerModule} from '@angular/material/datepicker'
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table'
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { UsuariosCreaditaComponent } from './page/usuarios/usuarios-creadita/usuarios-creadita.component';
-import { ToolbarComponent } from './page/toolbar/toolbar.component';
-import { MatToolbarModule} from '@angular/material/toolbar';
-import{MatIconModule} from'@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
-import { DelitosComponent } from './page/delitos/delitos.component';
-import { DelitosListarComponent } from './page/delitos/delitos-listar/delitos-listar.component';
-import { DelitosCreaditaComponent } from './page/delitos/delitos-creadita/delitos-creadita.component';
-import { DelitosDialogoComponent } from './page/delitos/delitos-listar/delitos-dialogo/delitos-dialogo.component';
-import { MatDialogModule} from '@angular/material/dialog'
+import { DistritoComponent } from './component/distrito/distrito.component';
+import { DistritoCreaeditaComponent } from './component/distrito/distrito-creaedita/distrito-creaedita.component';
+import { DistritoListarComponent } from './component/distrito/distrito-listar/distrito-listar.component';
+import { DistritoDialogoComponent } from './component/distrito/distrito-listar/distrito-dialogo/distrito-dialogo.component';
+import { MatInputModule } from '@angular/material/input'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
 @NgModule({
   declarations: [
     AppComponent,
-    UsuariosComponent,
-   UsuariosListarComponent,
-   UsuariosCreaditaComponent,
-   ToolbarComponent,
-   DelitosComponent,
-   DelitosListarComponent,
-   DelitosCreaditaComponent,
-   DelitosDialogoComponent,
-   
+    DistritoComponent,
+    DistritoCreaeditaComponent,
+    DistritoListarComponent,
+    DistritoDialogoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, 
-    HttpClientModule,
+    BrowserAnimationsModule,
     MatTableModule,
-    ReactiveFormsModule,
-    MatNativeDateModule,
-    FormsModule,
+
+    HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
     MatInputModule,
+    FormsModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatMenuModule,
-    MatDialogModule
-    
-   
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
