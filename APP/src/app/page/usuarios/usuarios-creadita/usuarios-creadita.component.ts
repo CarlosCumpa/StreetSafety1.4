@@ -71,7 +71,7 @@ constructor(private uS: UsuarioService,private router:Router, private route: Act
   }
   init() {
     if (this.edicion) {
-      this.uS.listId(this.id).subscribe((data) => {
+      this.uS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
           id: new FormControl(data.id),
           username: new FormControl(data.username),
@@ -85,6 +85,7 @@ constructor(private uS: UsuarioService,private router:Router, private route: Act
           idsuscripcion: new FormControl(data.idsuscripcion),
 
         });
+        console.log(data);
 
       });
     }

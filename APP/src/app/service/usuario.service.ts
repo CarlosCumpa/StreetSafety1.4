@@ -3,8 +3,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { enviroment } from '../enviroments/enviroment';
-import { Subject } from 'rxjs';
+import { Subject,EMPTY } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { EmptyExpr } from '@angular/compiler';
+
 
 const base_url=enviroment.base;
 
@@ -14,6 +16,8 @@ const base_url=enviroment.base;
 export class UsuarioService {
   private url = `${base_url}/usuarios`;
   private listaCambio = new Subject<Usuario[]>()
+  private confirmaEliminacion = new Subject<Boolean>()
+
   constructor(private http: HttpClient) {}
   list() {
     return this.http.get<Usuario[]>(this.url);
@@ -27,11 +31,28 @@ return this.http.post(this.url,usuario);
   getlist(){
     return this.listaCambio.asObservable();
   }
-  listId(id: number) {
+  listId(id:number) {
     return this.http.get<Usuario>(`${this.url}/${id}`);
   }
   update(usuario: Usuario) {
-    return this.http.put(this.url + '/' + usuario.id, usuario);
+    return this.http.put(this.url+'/'+usuario.id, usuario);
   }
+  eliminar(id: number) {
+
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
+  }
+  buscar(texto: string){
+    if(texto.length !=0) {
+      return this.http.post<Usuario[]>(`${this.url}/buscar`, texto.toLowerCase(),{});
+    }
+    return EMPTY;
+  }
+
   
 }

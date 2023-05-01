@@ -13,8 +13,11 @@
           <h1>Lista de Mascotas</h1>
         </div>
         <div style="text-align: right;">
-          <button mat-raised-button color="warn" routerLink="/usuarios/nuevo">Nuevo</button>
+          <button mat-raised-button color="warn" routerLink="/usuarios/nuevo"><mat-icon>add</mat-icon></button>
         </div>
+        <mat-form-field>
+          <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
+        </mat-form-field>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         
           
@@ -73,12 +76,21 @@
           <ng-container matColumnDef="accion1">
             <th mat-header-cell *matHeaderCellDef>Acción01</th>
             <td mat-cell *matCellDef="let element">
-              <button mat-raised-button color="warn" [routerLink]="['edit', element.id]">Actualizar</button>
+              <button mat-raised-button color="warn" [routerLink]="['editar', element.id]"><mat-icon>update</mat-icon></button>
+              <button mat-raised-button color="accent" (click)="confirmar(element.id)"><mat-icon>delete_outline</mat-icon></button>
+
             </td>
           </ng-container>
           <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayColumns"></tr>
         </table>
+        <mat-paginator 
+            
+              [pageSizeOptions]="[1, 10, 25, 100]"
+              showFirstLastButtons
+              aria-label="Seleccione Pagina de Usuarios">
+</mat-paginator>
+        
       </div>
 </body>
 </html>

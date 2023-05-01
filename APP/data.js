@@ -39,26 +39,7 @@ module.exports = function () {
 		idsuscripcion:3
       },
     
-    ],
-	Delitos: [
-		{
-			id:1,
-            Hora:"12",
-            Fecha:"2000-10-10",
-            Distrito:"Surco",
-            Distrito_idZona:1,
-            IdTipoDelitos:2
-		},
-	    {
-			id:2,
-            Hora:"11",
-            Fecha:"2000-10-19",
-            Distrito:"Surco",
-            Distrito_idZona:3,
-            IdTipoDelitos:5
-		}
-	
-	]
+    ]
   }
   return data
 }

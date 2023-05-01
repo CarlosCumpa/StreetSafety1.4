@@ -20,11 +20,11 @@ import { ToolbarComponent } from './page/toolbar/toolbar.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import{MatIconModule} from'@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
-import { DelitosComponent } from './page/delitos/delitos.component';
-import { DelitosListarComponent } from './page/delitos/delitos-listar/delitos-listar.component';
-import { DelitosCreaditaComponent } from './page/delitos/delitos-creadita/delitos-creadita.component';
-import { DelitosDialogoComponent } from './page/delitos/delitos-listar/delitos-dialogo/delitos-dialogo.component';
-import { MatDialogModule} from '@angular/material/dialog'
+import { UsuariosElimiarComponent } from './page/usuarios/usuarios-listar/usuarios-elimiar/usuarios-elimiar.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FooterComponent } from './page/footer/footer.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,10 +32,10 @@ import { MatDialogModule} from '@angular/material/dialog'
    UsuariosListarComponent,
    UsuariosCreaditaComponent,
    ToolbarComponent,
-   DelitosComponent,
-   DelitosListarComponent,
-   DelitosCreaditaComponent,
-   DelitosDialogoComponent,
+   UsuariosElimiarComponent,
+   FooterComponent,
+
+  
    
   ],
   imports: [
@@ -54,8 +54,11 @@ import { MatDialogModule} from '@angular/material/dialog'
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
-    MatDialogModule
-    
+    MatDialogModule,
+    MatPaginatorModule
+   
+
+
    
   ],
   providers: [],
